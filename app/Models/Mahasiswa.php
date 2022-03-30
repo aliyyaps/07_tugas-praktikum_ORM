@@ -25,6 +25,11 @@ class Mahasiswa extends Model //Definisi Model
         'nama',
         'kelas',
         'jurusan',
+
+        // Tugas Praktikum No 1
+        'email',
+        'alamat',
+        'tanggal_lahir',
     ];
     
 };

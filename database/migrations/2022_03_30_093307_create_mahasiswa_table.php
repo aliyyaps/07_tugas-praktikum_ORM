@@ -19,6 +19,11 @@ class CreateMahasiswaTable extends Migration
             $table->string('nama',25)->index();
             $table->string('kelas',5);
             $table->string('jurusan',35);
+
+            // Tugas Praktikum No 1
+            $table->string('email',100);
+            $table->string('alamat',100);
+            $table->date('tanggal_lahir');
             $table->timestamps();
         });
     }

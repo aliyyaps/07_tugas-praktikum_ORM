@@ -21,6 +21,11 @@
         <th>Nama</th>
         <th>Kelas</th>
         <th>Jurusan</th>
+
+        <!-- Tugas Praktikum No 1 -->
+        <th>Email</th>
+        <th>Alamat</th>
+        <th>Tanggal Lahir</th>
         <th width="280px">Action</th>
     </tr>
     @foreach ($mahasiswa as $mhs)
@@ -29,6 +34,11 @@
         <td>{{ $mhs ->nama }}</td>
         <td>{{ $mhs ->kelas }}</td>
         <td>{{ $mhs ->jurusan }}</td>
+
+        <!-- Tugas Praktikum No 1 -->
+        <td>{{ $mhs ->email }}</td>
+        <td>{{ $mhs ->alamat }}</td>
+        <td>{{ Carbon\Carbon::parse($mhs ->tanggal_lahir)->format('d-m-Y') }}</td>
         <td>
             <form action="{{ route('mahasiswa.destroy',['mahasiswa'=>$mhs->id_mahasiswa]) }}" method="POST">
                 <a class="btn btn-info" href="{{ route('mahasiswa.show',$mhs->id_mahasiswa) }}">Show</a>

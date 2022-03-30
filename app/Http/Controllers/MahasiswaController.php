@@ -48,6 +48,11 @@ class MahasiswaController extends Controller
             'nama' => 'required',
             'kelas' => 'required',
             'jurusan' => 'required',
+
+            // Tugas Praktikum No 1
+            'email' => ['required', 'email:dns'],
+            'alamat' => 'required',
+            'tanggal_lahir' => 'required',
         ]);
 
         //fungsi eloquent untuk menambah data
@@ -94,10 +99,15 @@ class MahasiswaController extends Controller
     {
         //melakukan validasi data
         $data= $request->validate([
-        'nim' => 'required',
-        'nama' => 'required',
-        'kelas' => 'required',
-        'jurusan' => 'required',
+            'nim' => 'required',
+            'nama' => 'required',
+            'kelas' => 'required',
+            'jurusan' => 'required',
+
+            // Tugas Praktikum No 1
+            'email' => ['required', 'email:dns'],
+            'alamat' => 'required',
+            'tanggal_lahir' => 'required',
         ]);
         //fungsi eloquent untuk mengupdate data inputan kita
         //memanggil nama kolom dalam model mahasiswa yang sesuai dengan id mahasiswa yg di req
