@@ -51,4 +51,7 @@
     </tr>
     @endforeach
 </table>
+<!-- Tugas Praktikum No 2 -->
+{{ $mahasiswa->links() }}
+
 @endsection
