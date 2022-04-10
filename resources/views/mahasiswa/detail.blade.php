@@ -1,4 +1,5 @@
 @extends('mahasiswa.layout')
+
 @section('content')
 <div class="container mt-5">
     <div class="row justify-content-center align-items-center">
@@ -12,8 +13,8 @@
                     <li class="list-group-item"><b>Nama: </b>{{$Mahasiswa->nama}}</li>
                     <li class="list-group-item"><b>Kelas: </b>{{$Mahasiswa->kelas}}</li>
                     <li class="list-group-item"><b>Jurusan: </b>{{$Mahasiswa->jurusan}}</li>
-                    
-                    <!-- Tugas Praktikum No 1 -->
+
+                    <!-- Tugas Praktikum 7 No 1 -->
                     <li class="list-group-item"><b>Email: </b>{{$Mahasiswa->email}}</li>
                     <li class="list-group-item"><b>Alamat: </b>{{$Mahasiswa->alamat}}</li>
                     <li class="list-group-item"><b>Tanggal Lahir: </b>{{$Mahasiswa->tanggal_lahir}}</li>

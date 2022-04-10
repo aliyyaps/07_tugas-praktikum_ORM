@@ -17,5 +17,5 @@ use Illuminate\Http\Request;
 
 Route::resource('/mahasiswa', MahasiswaController::class);
 
-// Tugas Praktikum No 3
-Route::get('search', [MahasiswaController::class,'search'])->name('search');
+// Tugas Praktikum 7 No 3
+Route::get('search', [MahasiswaController::class, 'search'])->name('search');

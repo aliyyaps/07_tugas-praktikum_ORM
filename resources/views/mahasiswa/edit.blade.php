@@ -1,5 +1,7 @@
 @extends('mahasiswa.layout')
+
 @section('content')
+
 <div class="container mt-5">
     <div class="row justify-content-center align-items-center">
         <div class="card" style="width: 24rem;">
@@ -17,45 +19,38 @@
                     </ul>
                 </div>
                 @endif
-                <form method="post" action="{{ route('mahasiswa.update', $Mahasiswa->id_mahasiswa) }}" id="myForm">
+                <form method="post" action="{{ route('mahasiswa.update', $Mahasiswa->nim) }}" id="myForm">
                     @csrf
                     @method('PUT')
                     <div class="form-group">
                         <label for="Nim">Nim</label>
-                        <input type="text" name="nim" class="form-control" id="Nim" value="{{ $Mahasiswa->nim }}"
-                            aria-describedby="Nim">
+                        <input type="text" name="Nim" class="form-control" id="Nim" value="{{ $Mahasiswa->nim }}" aria-describedby="Nim">
                     </div>
                     <div class="form-group">
                         <label for="Nama">Nama</label>
-                        <input type="text" name="nama" class="form-control" id="Nama" value="{{ $Mahasiswa->nama }}"
-                            aria-describedby="Nama">
+                        <input type="text" name="Nama" class="form-control" id="Nama" value="{{ $Mahasiswa->nama }}" aria-describedby="Nama">
                     </div>
                     <div class="form-group">
                         <label for="Kelas">Kelas</label>
-                        <input type="Kelas" name="kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->kelas }}"
-                            aria-describedby="Kelas">
+                        <input type="Kelas" name="Kelas" class="form-control" id="Kelas" value="{{ $Mahasiswa->kelas }}" aria-describedby="Kelas">
                     </div>
                     <div class="form-group">
                         <label for="Jurusan">Jurusan</label>
-                        <input type="Jurusan" name="jurusan" class="form-control" id="Jurusan"
-                            value="{{ $Mahasiswa->jurusan }}" aria-describedby="Jurusan">
+                        <input type="Jurusan" name="Jurusan" class="form-control" id="Jurusan" value="{{ $Mahasiswa->jurusan }}" aria-describedby="Jurusan">
                     </div>
 
-                    <!-- Tugas Praktikum No 1 -->
+                    <!-- Tugas Praktikum 7 No 1 -->
                     <div class="form-group">
                         <label for="Email">Email</label>
-                        <input type="Email" name="email" class="form-control" id="Email"
-                            value="{{ $Mahasiswa->email }}" aria-describedby="Email">
+                        <input type="Email" name="Email" class="form-control" id="Email" value="{{ $Mahasiswa->email }}" aria-describedby="Email">
                     </div>
                     <div class="form-group">
                         <label for="Alamat">Alamat</label>
-                        <input type="Alamat" name="alamat" class="form-control" id="Alamat"
-                            value="{{ $Mahasiswa->alamat }}" aria-describedby="Alamat">
+                        <input type="Alamat" name="Alamat" class="form-control" id="Alamat" value="{{ $Mahasiswa->alamat }}" aria-describedby="Alamat">
                     </div>
                     <div class="form-group">
-                        <label for="Tanggal_Lahir">Tanggal Lahir</label>
-                        <input type="date" name="tanggal_lahir" class="form-control" id="Tanggal_Lahir"
-                            value="{{ $Mahasiswa->tanggal_lahir }}" aria-describedby="Tanggal_Lahir">
+                        <label for="Tanggal_Lahir">Tanggal_Lahir</label>
+                        <input type="Tanggal_Lahir" name="Tanggal_Lahir" class="form-control" id="Tanggal_Lahir" value="{{ $Mahasiswa->tanggal_lahir }}" aria-describedby="Tanggal_Lahir">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>

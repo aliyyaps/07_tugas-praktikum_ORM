@@ -2,38 +2,39 @@
 @section('content')
 <div class="row">
     <div class="col-lg-12 margin-tb">
-        <div class="pull-left mt-2">
+        <div class="d-flex justify-content-center my-3">
             <h2>JURUSAN TEKNOLOGI INFORMASI-POLITEKNIK NEGERI MALANG</h2>
         </div>
-        <div class="float-right my-2">
+        <div class="float-right">
             <a class="btn btn-success" href="{{ route('mahasiswa.create') }}"> Input Mahasiswa</a>
+        </div>
+
+        <div class="float-left my-2">
+            <!-- Tugas Praktikum 7 No 3 -->
+            <form class="form" method="get" action="{{ route('search') }}">
+                <div class="input-group">
+                    <input type="search" name="search" class="form-control mr-3 rounded" placeholder="Nama" aria-label="Search" aria-describedby="search-addon" />
+                    <button type="submit" class="btn btn-outline-success">Search</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
+
 @if ($message = Session::get('success'))
 <div class="alert alert-success">
     <p>{{ $message }}</p>
 </div>
 @endif
+
 <table class="table table-bordered">
-
-    <!-- Tugas Praktikum No 3 -->
-    <form class="form" method="get" action="{{ route('search') }}">
-        <div class="form-group w-100 mb-3">
-            <label for="search" class="d-block mr-2"><h5>Pencarian</h5></label>
-            <input type="text" name="search" class="form-control w-75 d-inline" id="search"
-                placeholder="Masukkan Keyword">
-            <button type="submit" class="btn btn-primary mb-1">Cari</button>
-        </div>
-    </form>
-
     <tr>
         <th>Nim</th>
         <th>Nama</th>
         <th>Kelas</th>
         <th>Jurusan</th>
 
-        <!-- Tugas Praktikum No 1 -->
+        <!-- Tugas Praktikum 7 No 1 -->
         <th>Email</th>
         <th>Alamat</th>
         <th>Tanggal Lahir</th>
@@ -41,19 +42,21 @@
     </tr>
     @foreach ($mahasiswa as $mhs)
     <tr>
+
         <td>{{ $mhs ->nim }}</td>
         <td>{{ $mhs ->nama }}</td>
         <td>{{ $mhs ->kelas }}</td>
         <td>{{ $mhs ->jurusan }}</td>
 
-        <!-- Tugas Praktikum No 1 -->
+        <!-- Tugas Praktikum 7 No 1 -->
         <td>{{ $mhs ->email }}</td>
         <td>{{ $mhs ->alamat }}</td>
         <td>{{ Carbon\Carbon::parse($mhs ->tanggal_lahir)->format('d-m-Y') }}</td>
         <td>
-            <form action="{{ route('mahasiswa.destroy',['mahasiswa'=>$mhs->id_mahasiswa]) }}" method="POST">
-                <a class="btn btn-info" href="{{ route('mahasiswa.show',$mhs->id_mahasiswa) }}">Show</a>
-                <a class="btn btn-primary" href="{{ route('mahasiswa.edit',$mhs->id_mahasiswa) }}">Edit</a>
+            <form action="{{ route('mahasiswa.destroy',['mahasiswa'=>$mhs->nim]) }}" method="POST">
+
+                <a class="btn btn-info" href="{{ route('mahasiswa.show',$mhs->nim) }}">Show</a>
+                <a class="btn btn-primary" href="{{ route('mahasiswa.edit',$mhs->nim) }}">Edit</a>
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Delete</button>
@@ -62,7 +65,7 @@
     </tr>
     @endforeach
 </table>
-<!-- Tugas Praktikum No 2 -->
+<!-- Tugas Praktikum 7 No 2 -->
 {{ $mahasiswa->links() }}
 
 @endsection
